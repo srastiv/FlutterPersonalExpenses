@@ -5,11 +5,14 @@ class ChartBar extends StatelessWidget {
   final double spendingAmount;
   final double percentageOfSpending;
   ChartBar(this.label, this.spendingAmount, this.percentageOfSpending);
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Text('\$${spendingAmount.toStringAsFixed(0)}'),
+        FittedBox(
+          child: Text('\$${spendingAmount.toStringAsFixed(0)}'),
+        ),
         SizedBox(
           height: 4,
         ),
@@ -20,7 +23,7 @@ class ChartBar extends StatelessWidget {
             children: <Widget>[
               Container(
                 decoration: BoxDecoration(
-                  border: Border.all(color: Colors.grey, width: 1.0),
+                  border: Border.all(color: Colors.deepPurple, width: 1.0),
                   color: Color.fromRGBO(220, 220, 220, 1),
                   borderRadius: BorderRadius.circular(10),
                 ),
@@ -29,7 +32,7 @@ class ChartBar extends StatelessWidget {
                 heightFactor: percentageOfSpending,
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Colors.grey,
+                    color: Colors.amber,
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
